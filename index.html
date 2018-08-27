@@ -1,1 +1,42 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>vueblog</title><link href=/static/css/app.748b4a9adb71d77b28d6867fca98a51e.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=/static/js/vendor.ca1d896a2016189b9b71.js></script><script type=text/javascript src=/static/js/app.2c48ff7e4d8f28eccb73.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chart</title>
+    <script src="https://cdn.bootcss.com/Chart.js/2.7.2/Chart.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap-grid.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+        <div class="dd">111</div>
+    </div>
+
+    <script>
+        let myChart = document.querySelector('#myChart').getContext('2d')
+
+
+        let chart = new Chart(myChart, {
+            type:'bar',
+            data:{
+                labels:["北京","深证","广州","杭州"],
+                datasets:[{
+                    labels:"工作热度值",
+                    data:[999,25,888,46],
+                    backgroundColor:[
+                        'rgba(255,99,132,0.6)',
+                        'rgba(54,162,235,0.6)',
+                        'rgba(255,206,86,0.6)',
+                        'rgba(75,192,192,0.6)',
+                    ]
+
+                }],
+                borderWidth:2,
+                // borderColor: black
+            }
+        })
+    </script>
+</body>
+</html>
