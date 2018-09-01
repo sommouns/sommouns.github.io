@@ -1,0 +1,18 @@
+.point{
+	background: #eee;
+	position: absolute;
+	border-radius: 50%
+}
+
+.h5_component_point .name{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	font-size: 18px;
+	top:50%;
+	transform: translateY(-50%);
+}
+.h5_component_point .name .per{
+	font-size: .5em
+} 

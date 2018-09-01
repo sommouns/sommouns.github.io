@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name='viewport' content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+	<!-- lib -->
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/jquery.fullPage.js"></script>
+	<!-- base -->
+	<link rel="stylesheet" href="../css/h5.css">
+	<script src="../js/h5.js"></script>
+	<link rel="stylesheet" href="../css/ComponentBase.css">
+	<script src="../js/componentBase.js"></script>
+	<link rel="stylesheet" href="../css/componentPolyLine.css">
+	<script src="../js/componentPolyLine.js"></script>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background: #000;
+			font-size: 12px
+		}
+		.iphone{
+			width: 340px;
+			height: 540px;
+			background: #fff;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div class="iphone"></div>
+	
+	<script>
+		const cfg = {
+			type: 'polyline',
+			// text: '',
+			width: 530,
+			height: 400,
+			// bg: '../img/p1_people.png',
+			data: [
+				['aXiang', .4, 'green'],
+				['bXiang', .5, 'black', 0, '-60%'],
+				['cXiang', .6, 'red', 0, '120%'],
+				['dXiang', .8, 'red', 0, '120%'],
+				['eXiang', .3, 'red', 0, '120%']
+			],
+			css: {
+				// top:50,
+				bottom:120,
+				// left:50,
+				// opacity:0
+			},
+			center:true,
+			// animateIn:{bottom: '40%', opacity: 1},
+			// animateOut:{bottom: 0, opacity: 0}
+		}
+		const h5 = new h5ComponentPolyLine('myname', cfg)
+		$('.iphone').append(h5)
+		let isLeave = false
+		$('body').click(() => {
+			isLeave = !isLeave
+			$('.h5_component').triggerHandler( isLeave ? 'onLoad' : 'onLeave')
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+	<title>Document</title>
+
+	<!-- lib -->
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/jquery.fullPage.js"></script>
+	<!-- base -->
+	<link rel="stylesheet" href="../css/h5.css">
+	<script src="../js/h5.js"></script>
+	<link rel="stylesheet" href="../css/ComponentBase.css">
+	<script src="../js/componentBase.js"></script>
+
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	
+	<script>
+		$(function() {
+			var h5 = new H5()
+
+			h5
+			.addPage('face')
+				.addComponent('logo', {
+					type: 'base',
+					text: '',
+					width: 514,
+					height: 306,
+					bg: '../img/p1_people.png',
+					css: {
+						// top:50,
+						bottom:0,
+						// left:50,
+						opacity:0
+					},
+					center:true,
+					animateIn:{bottom: 80, opacity: 1},
+					animateOut:{bottom: 0, opacity: 0}
+				})
+			.addPage('face')
+				.addComponent('logo', {
+					text:'logo',
+					center:true
+				})
+			.addPage('face')
+				.addComponent('logo', {
+					text:'logo',
+					center:true
+				})
+			.loader()
+
+			
+		})
+	</script> 
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name='viewport' content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+	<!-- lib -->
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/jquery.fullPage.js"></script>
+	<!-- base -->
+	<link rel="stylesheet" href="../css/h5.css">
+	<script src="../js/h5.js"></script>
+	<link rel="stylesheet" href="../css/ComponentBase.css">
+	<script src="../js/componentBase.js"></script>
+	<link rel="stylesheet" href="../css/componentPie.css">
+	<script src="../js/componentPie.js"></script>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background: #000;
+			font-size: 12px
+		}
+		.iphone{
+			width: 340px;
+			height: 540px;
+			background: #fff;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div class="iphone"></div>
+	
+	<script>
+		const cfg = {
+			type: 'pie',
+			// text: '',
+			width: 400,
+			height: 400,
+			// bg: '../img/p1_people.png',
+			data: [
+				['aXiang', .4, 'green'],
+				['bXiang', .2, 'black', 0, '-60%'],
+				['cXiang', .1, 'red', 0, '120%'],
+				['dXiang', .1, 'blue', 0, '120%'],
+				['eXiang', .2, 'brown', 0, '120%']
+			],
+			css: {
+				// top:50,
+				top:200,
+				// left:50,
+				// opacity:0
+			},
+			center:true,
+			// animateIn:{top: 200, opacity: 1},
+			// animateOut:{top: 100, opacity: 0}
+		}
+		const h5 = new  h5ComponentPie('myname', cfg)
+		$('.iphone').append(h5)
+		let isLeave = false
+		$('body').click(() => {
+			isLeave = !isLeave
+			$('.h5_component').triggerHandler( isLeave ? 'onLoad' : 'onLeave')
+		})
+	</script>
+</body>
+</html>

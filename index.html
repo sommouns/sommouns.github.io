@@ -1,42 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>chart</title>
-    <script src="https://cdn.bootcss.com/Chart.js/2.7.2/Chart.js"></script>
-    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap-grid.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name='viewport' content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
+	<title>Document</title>
+
+	<!-- lib -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	<!-- component-js -->
+	<script src="js/componentBase.js"></script>
+	<script src="js/componentPie.js"></script>
+	<script src="js/componentPoint.js"></script>
+	<script src="js/componentPolyLine.js"></script>
+	<script src="js/componentRadar.js"></script>
+	<script src="js/h5.js"></script>
+	<script src="js/test-componentBar.js"></script>
+	<!-- comonent-css -->
+	<link rel="stylesheet" href="css/ComponentBase.css">
+	<link rel="stylesheet" href="css/componentPie.css">
+	<link rel="stylesheet" href="css/componentPoint.css">
+	<link rel="stylesheet" href="css/componentPolyLine.css">
+	<link rel="stylesheet" href="css/componentRadar.css">
+	<link rel="stylesheet" href="css/h5.css">
+	<link rel="stylesheet" href="css/test-componentBar.css">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+
+		.h5_page{
+			background-image: url('img/page_bg.png');
+		}
+		.h5_page_face{
+			background: none;
+			background-image: url('img/face_bg.png');
+			-webkit-background-size: 100%;
+			background-size: 100%;
+		}
+		.h5_component_name_sologen{
+			-webkit-animation: rock 2s infinite 2s;
+			/*left:50%;*/
+		}
+		.h5_component_name_caption{
+			background-image: url('img/page_caption_bg.png');
+			width: 283px;
+			height: 140px;
+			text-align: center;
+			line-height: 140px;
+			font-size: 20px;
+			color: #fff
+		}
+		.h5_component_name_back{
+			top: 30px;
+			-webkit-animation: back 2s infinite 2s;
+		}
+		@-webkit-keyframes back{
+			50%{
+				top:20px;
+			}
+		}
+		@-webkit-keyframes rock{
+			0%{
+				transform: rotate(0deg) translateX(-50%);
+			}
+			5%{
+				transform: rotate(3deg) translateX(-50%);
+			}
+			10%{
+				transform: rotate(-4deg) translateX(-50%);
+			}
+			15%{
+				transform: rotate(3deg) translateX(-50%);
+			}
+			20%{
+				transform: rotate(-2deg) translateX(-50%);
+			}
+			25%{
+				transform: rotate(1deg) translateX(-50%);
+			}
+			30%{
+				transform: rotate(-1deg) translateX(-50%);
+			}
+			70%{
+				transform: rotate(0deg) translateX(-50%);
+			}
+			100%{
+				transform: rotate(0deg) translateX(-50%)
+			}
+		}
+	</style>
 </head>
 <body>
-    <div class="container">
-        <canvas id="myChart"></canvas>
-        <div class="dd">111</div>
-    </div>
+	<script>
+		$(function() {
+			var h5 = new H5()
 
-    <script>
-        let myChart = document.querySelector('#myChart').getContext('2d')
+			h5
+			.addPage('face')
+				.addComponent('logo', {
+					center:true,
+					width:395,
+					height:130,
+					bg:'img/face_logo.png',
+					css:{
+						top:0,
+						opacity:0
+					},
+					animateIn:{top:100, opacity:1},
+					animateOut:{top:0, opacity:0}
+				})
+				.addComponent('sologen', {
+					width:365,
+					height:99,
+					center:true,
+					bg: 'img/face_slogan.png',
+					css:{
+						opacity:0,
+						top:180,
+						left:0
+					},
+					animateIn:{
+						left:'50%',
+						opacity:1,
+						delay:500
+					},
+					animateOut:{
+						// left:0,
+						opacity:0
+					}
+				})
+				.addComponent('face_img_left', {
+					width:370,
+					height:493,
+					bg: 'img/face_img_left.png',
+					css:{
+						opacity:0,
+						left:-50,
+						bottom:-50
+					},
+					animateIn:{
+						opacity:1,
+						left:0,
+						bottom:0
+					},
+					animateOut:{
+						opacity:0,
+						left:-50,
+						bottom:-50
 
+					},
+					delay:1000
+				})
+				.addComponent('face_img_right', {
+					width:276,
+					height:449,
+					bg: 'img/face_img_right.png',
+					css:{
+						opacity:0,
+						right:-50,
+						bottom:-50
+					},
+					animateIn:{
+						opacity:1,
+						right:0,
+						bottom:0
+					},
+					animateOut:{
+						opacity:0,
+						right:-50,
+						bottom:-50
 
-        let chart = new Chart(myChart, {
-            type:'bar',
-            data:{
-                labels:["北京","深证","广州","杭州"],
-                datasets:[{
-                    labels:"工作热度值",
-                    data:[999,25,888,46],
-                    backgroundColor:[
-                        'rgba(255,99,132,0.6)',
-                        'rgba(54,162,235,0.6)',
-                        'rgba(255,206,86,0.6)',
-                        'rgba(75,192,192,0.6)',
-                    ]
+					},
+					delay:1500
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'核心理念'
+				})
+				.addComponent('text', {
+					width:500,
+					height:30,
+					center:true,
+					text:'It教育',
+					css:{
+						opacity:0,
 
-                }],
-                borderWidth:2,
-                // borderColor: black
-            }
-        })
-    </script>
+						textAlign:'center',
+						color:'red',
+						fontSize:'26px'
+					},
+					animateIn:{
+						opacity:1,top:160
+					},animateOut:{
+						opacity:0,top:240
+					}
+				})
+				.addComponent('description',{
+					center:true,
+					width:481,
+					height:285,
+					bg:'img/description_bg.gif',
+					css:{
+						opacity:0,
+						padding:'15px 10px 10px 10px',
+						color:'#fff',
+						fontSize:'15px',
+						lineHeight:'18px',
+						textAlign:'justify',
+						bottom:40
+
+					},
+					text:'大师傅和大家发山东飞机撒东方嘉盛大佛几点睡觉git局推短时发生的范德萨发奇偶去玩irj大师傅和大家发山东飞机撒东方嘉盛大佛几点睡觉git局推短时发生的范德萨发奇偶去玩irj',
+					animateIn:{
+						opacity:1,
+						bottom:190,
+
+					},
+					animateOut:{
+						opacity:0,
+						bottom:40
+					},
+					delay:1000
+				})
+				.addComponent('people',{
+					center:true,
+					width:515,
+					height:305,
+					bg:'img/p1_people.png',
+					css:{
+						opacity:0,
+						bottom:0
+					},
+					animateIn:{
+						opacity:1,
+						bottom:40
+					},
+					animateOut:{
+						opacity:0,
+						bottom:0
+					},
+					delay:500
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'课程方向'
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'移动开发'
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'前端开发'
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'后端开发'
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'课程人数报名过万'
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'课程难度分布'
+				})
+			.addPage('tail')
+				.addComponent('logo',{
+					center:true,
+					width:359,
+					height:129,
+					bg:'img/tail_logo.png'	,
+					css:{
+						opacity:0,
+						top:240
+
+					},
+					animateIn:{
+						opacity:1,top:210
+					},animateOut:{
+						opacity:0,top:240
+					}
+				})
+				.addComponent('slogan',{
+					center:true,
+					width:359,
+					height:129,
+					bg:'img/tail_slogan.png'	,
+					css:{
+						opacity:0,
+						top:281
+
+					},
+					animateIn:{
+						opacity:1,left:'50%'
+					},animateOut:{
+						opacity:0,left:0
+					},
+					delay:500
+				})
+				.addComponent('share',{
+					width:128,
+					height:120,
+					bg:'img/tail_share.png'	,
+					css:{
+						opacity:0,
+						top:110,
+						right:110
+
+					},
+					animateIn:{
+						opacity:1,top:10,right:19
+					},animateOut:{
+						opacity:0,top:110,
+						right:100
+					},
+					delay:500
+				})
+				.addComponent('back',{
+					width:52,
+					height:50,
+					bg:'img/tail_back.png'	,
+					css:{
+						opacity:0,
+						top:110,
+						right:110
+
+					},
+					animateIn:{
+						opacity:1,top:10,right:19
+					},animateOut:{
+						opacity:0,top:110,
+						right:100
+					},
+					delay:1000,
+					center:true,
+					onclick: function(){
+						$.fn.fullpage.moveTo(1)
+					}
+				})
+			.loader()
+		})
+	</script>
 </body>
 </html>

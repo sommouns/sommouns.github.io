@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content="weidh=device-width, minimum-scale=1, maximun-scale=1">
+	<title>Document</title>
+	<!-- lib -->
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/jquery.fullPage.js"></script>
+	<!-- base -->
+	<link rel="stylesheet" href="../css/h5.css">
+	<script src="../js/h5.js"></script>
+	<link rel="stylesheet" href="../css/ComponentBase.css">
+	<script src="../js/componentBase.js"></script>
+
+	<style>
+		*{
+			padding: 0;
+			margin: 0
+		}
+	</style>
+</head>
+<body>
+	<!-- 测试内容组织功能，以及fullpage页面切换&组件切换 -->
+
+
+	<script>
+		$(function() {
+			var h5 = new H5
+			h5
+			.addPage('face')
+				.addComponent('logo', {
+					text: 'logo',
+					width: 300,
+					height: 300,
+					css: {
+						top:200,
+						backgroundColor: 'red'
+					},
+
+					
+				})
+				.addComponent('slogen', {
+					text: 'slogen',
+					center:true
+				})
+			.addPage('desc')
+				.addComponent('title',{
+					text:'desc'
+				})
+			.addPage('page-3')
+			.loader()
+				
+		})
+	</script>
+
+</body>
+</html>
