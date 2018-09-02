@@ -75,20 +75,20 @@ var h5ComponentPie =function ( name, cfg ) {
     // text.css('top',y/2);
 
     if(x > w/2){
-      text.css('left',x/2);
+      text.css('left',x/2+15);
     }else{
-      text.css('right',(w-x)/2);
+      text.css('right',(w-x)/2+5);
     }
     if(y > h/2){
-      text.css('top',y/2);
+      text.css('top',y/2-30);
     }else{
-      text.css('bottom',(h-y)/2);
+      text.css('bottom',(h-y)/2+3+10);
     }
-    if( cfg.data[i][2] ){
-      text.css('color',cfg.data[i][2]); 
-    }
+    text.css('font-size', '12px').css('white-space', 'nowrap')
+    console.log(h/2)
     text.css('opacity',0);
     component.append(text);
+    console.log(y)
 
   }
 

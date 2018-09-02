@@ -1,7 +1,7 @@
 var h5ComponentBar = function(name, config) {
 	var component = new h5ComponentBase(name, config)
 
-	$.each(cfg.data, function(idx, item) {
+	$.each(config.data, function(idx, item) {
 
 		var line = $('<div class="line">')
 		var name = $('<div class="name">')

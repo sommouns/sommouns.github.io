@@ -19,13 +19,13 @@ var h5ComponentRadar = function(name, cfg){
 	// ctx.arc(r,r,r,0,2*Math.PI)
 	ctx.stroke()
 	var isBlue = true
-	for (var s = 10; s > 0; s--) {
+	for (var s = 5; s > 0; s--) {
 		isBlue = !isBlue
 		ctx.beginPath()
 		for (var i = 0; i < step; i++) {
 			var rad = (2*Math.PI/360)*(360/step)*i + Math.PI
-			var x = r + Math.sin(rad)*r*(s/10)
-			var y = r + Math.cos(rad)*r*(s/10)
+			var x = r + Math.sin(rad)*r*(s/5)
+			var y = r + Math.cos(rad)*r*(s/5)
 			
 			// ctx.arc(x,y,5,0,2*Math.PI)
 			ctx.lineTo(x,y)
@@ -107,7 +107,7 @@ var h5ComponentRadar = function(name, cfg){
 			setTimeout(function(){
 				s+=.01
 				draw(s)
-			}, i*10)
+			}, i*30)
 			
 		}
 	})

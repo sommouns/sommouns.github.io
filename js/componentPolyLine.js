@@ -16,16 +16,39 @@ var h5ComponentPolyLine = function(name, cfg){
 	var step = 10
 	ctx.beginPath()
 	ctx.lineWidth = 1
+
 	ctx.strokeStyle = '#aaa'
 	var text_w = w/step >> 0
-
-	for(var i = 0 ; i < step+1; i++){
+	var isBlue = true
+	var bgc = []
+	for(var i = 0 ; i <step +1; i++){
 		var y = (h/step) * i
+		// var initialX = 0
+		var initialY = 0
 		ctx.moveTo(0, y)
 		ctx.lineTo(w, y)
+		
+		
+		// ctx.fillStyle= isBlue ? "white" : "blue";
+		
+		
+		// console.log( ctx.fillStyle);
+		        
+		// ctx.fill();
+
+		bgc.push(y)
+		// initialY = y 
+		// console.log(initialY)
+		// isBlue = !isBlue
+		// console.log(isBlue)
 	}	
+	 console.log( bgc);
+	        
 
 	//vertical-line
+	ctx.beginPath()
+	ctx.lineWidth = 1
+
 	step = cfg.data.length+1
 	for (var i = 0; i < step + 1; i++) {
 		var x = (w/step) * i
@@ -36,6 +59,34 @@ var h5ComponentPolyLine = function(name, cfg){
 			text.text(cfg.data[i][0])
 			text.css('width', text_w).css('left', x/2 + text_w/4)
 			component.append(text)
+			
+		}
+		
+	}
+	ctx.stroke()
+	for (var i = 0; i < bgc.length - 1; i++) {
+		ctx.beginPath()
+		ctx.fillStyle= isBlue ?  "skyblue": "white"
+		ctx.rect(0,bgc[i],w,bgc[i+1])
+		ctx.fill()
+		ctx.stroke()
+		isBlue = !isBlue
+		// ctx.rect(0,initialY,w,y);
+	}
+	//vertical-line
+	ctx.beginPath()
+	ctx.strokeStyle = '#aaa'
+	step = cfg.data.length+1
+	for (var i = 0; i < step + 1; i++) {
+		var x = (w/step) * i
+		ctx.moveTo(x, 0)
+		ctx.lineTo(x, h)
+		if(cfg.data[i]){
+			var text = $('<div class="text">')
+			text.text(cfg.data[i][0])
+			text.css('width', text_w).css('left', x/2 + text_w/4)
+			component.append(text)
+			
 		}
 		
 	}
@@ -99,7 +150,7 @@ var h5ComponentPolyLine = function(name, cfg){
 			setTimeout(function(){
 				s+=.01
 				draw(s)
-			}, i*10)
+			}, i*30)
 			
 		}
 	})
