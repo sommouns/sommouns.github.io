@@ -46,18 +46,22 @@ const H5 = function () {
 
 		return this
 	}
-	this.loader = function () {
-		this.el.fullpage({
-			onLeave(index, nextIndex, direction) {
-				$(this).find('.h5_component').trigger('onLeave')
-			},
-			afterLoad(anchorLink, index) {
-				$(this).find('.h5_component').trigger('onLoad')
-			} 
-		})
-		this.pages[0].find('.h5_component').trigger('onLoad')
-		this.el.show()
-	}
-
+	
+	this.loader = function( firstPage ){
+        this.el.fullpage({
+            onLeave:function( index, nextIndex, direction) {
+                $(this).find('.h5_component').trigger('onLeave');
+            },
+            afterLoad:function( anchorLink, index ) {
+                $(this).find('.h5_component').trigger('onLoad');
+            }
+        });
+        this.pages[0].find('.h5_component').trigger('onLoad');
+        this.el.show();
+        if(firstPage){
+            $.fn.fullpage.moveTo( firstPage );
+        }
+    }
+    this.loader = typeof H5_loading == 'function' ? H5_loading : this.loader;
 	return this
 }
