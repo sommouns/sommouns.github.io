@@ -266,15 +266,15 @@
 					text:'课程分布前端开发占到40%',
 					center:true,
 					css:{
-						fontSize: '24px',
-						top: 80,
+						fontSize: '18px',
+						bottom: 0,
 						opacity: 0,
 						whiteSpace: 'nowrap'
 					},
-					animateIn:{top:100,opacity:1},
-					animateOut:{top:80,opacity:0},
-
+					animateIn:{bottom:"15%",opacity:1},
+					animateOut:{bottom:0,opacity:0},
 				})
+				
 				.addComponent('polyline', {
 					type: 'polyline',
 					// text: '',
@@ -295,7 +295,7 @@
 						opacity:0
 					},
 					center:true,
-					animateIn:{bottom: '31%', opacity: 1},
+					animateIn:{bottom: '11%', opacity: 1},
 					animateOut:{bottom: 0, opacity: 0},
 					delay:500
 						})
