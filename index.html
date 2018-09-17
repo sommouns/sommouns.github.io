@@ -19,6 +19,7 @@
 		body{
 			margin: 0;
 			padding: 0;
+			font-family: 'KaiTi'
 		}
 
 		.h5_page{
@@ -26,12 +27,7 @@
 			-webkit-background-size: cover;
 			background-size: cover;
 		}
-		/*.h5_page_face{
-			background: none;
-			background-image: url('img/face_bg.png');
-			-webkit-background-size: 100%;
-			background-size: 100%;
-		}*/
+		
 		.h5_component_name_sologen{
 			-webkit-animation: rock 2s infinite 2s;
 			/*left:50%;*/
@@ -111,28 +107,22 @@
     </div>
 	<embed src="music.mp3" loop="true" autostart="true" width="0" height="0" style="margin:0;padding: 0;position: absolute;">
 	<script src="js/componentBase.js"></script>
-	<script src="js/componentPie.js"></script>
-	<script src="js/componentPoint.js"></script>
-	<script src="js/componentPolyLine.js"></script>
-	<script src="js/componentRadar.js"></script>
+
 	
 	<script src="js/test-componentBar.js"></script>
 	<!-- comonent-css -->
 	<link rel="stylesheet" href="css/ComponentBase.css">
-	<link rel="stylesheet" href="css/componentPie.css">
-	<link rel="stylesheet" href="css/componentPoint.css">
-	<link rel="stylesheet" href="css/componentPolyLine.css">
-	<link rel="stylesheet" href="css/componentRadar.css">
-	
-	<link rel="stylesheet" href="css/test-componentBar.css">
 
-	<script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+	
+
+
+	<!-- <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
 	<script type="text/javascript">
 	   $youziku.load("body", "6963077eec8b4be1b26a5b9c6280260b", "LiDeBiao-Xing3");
 	   /*$youziku.load("#id1,.class1,h1", "6963077eec8b4be1b26a5b9c6280260b", "LiDeBiao-Xing3");*/
 	   /*．．．*/
 	   $youziku.draw();
-	</script>
+	</script> -->
 	<script>
 
 		$(function() {
@@ -227,50 +217,7 @@
 						opacity:0
 					}
 				})
-			// 	.addComponent('face_img_left', {
-			// 		width:370,
-			// 		height:493,
-			// 		bg: 'img/face_img_left.png',
-			// 		css:{
-			// 			opacity:0,
-			// 			left:-50,
-			// 			bottom:-50
-			// 		},
-			// 		animateIn:{
-			// 			opacity:1,
-			// 			left:0,
-			// 			bottom:0
-			// 		},
-			// 		animateOut:{
-			// 			opacity:0,
-			// 			left:-50,
-			// 			bottom:-50
-
-			// 		},
-			// 		delay:1000
-			// 	})
-			// 	.addComponent('face_img_right', {
-			// 		width:276,
-			// 		height:449,
-			// 		bg: 'img/face_img_right.png',
-			// 		css:{
-			// 			opacity:0,
-			// 			right:-50,
-			// 			bottom:-50
-			// 		},
-			// 		animateIn:{
-			// 			opacity:1,
-			// 			right:0,
-			// 			bottom:0
-			// 		},
-			// 		animateOut:{
-			// 			opacity:0,
-			// 			right:-50,
-			// 			bottom:-50
-
-			// 		},
-			// 		delay:1500
-			// 	})
+			
 			.addPage()
 
 				.addComponent('caption', {
@@ -711,155 +658,7 @@
 					animateIn:{bottom:'15%',opacity:1},
 					animateOut:{bottom:'0',opacity:0},
 				})
-			// 
-			// 	.addComponent('content', {
-			// 		text:'移动开发课程中 Android 比例最大',
-			// 		center:true,
-			// 		css:{
-			// 			fontSize: '18px',
-			// 			bottom: 0,
-			// 			opacity: 0,
-			// 			whiteSpace: 'nowrap'
-			// 		},
-			// 		animateIn:{bottom:"15%",opacity:1},
-			// 		animateOut:{bottom:0,opacity:0},
-			// 	})
-			// 	.addComponent('pie', {
-			// 		type: 'pie',
-			// 		// text: '',
-			// 		width: 400,
-			// 		height: 400,
-			// 		// bg: '../img/p1_people.png',
-			// 		data: [
-			// 			['IOS', .25, '#5DDBD8'],
-			// 			['Cocos2d-x', .08, '#99C0FF'],
-			// 			['Unity-3D', .08, '#FFAD69'],
-			// 			['Android ', .59, '#FF7676'],
-			// 		],
-			// 		css: {
-			// 			// top:50,
-			// 			top:200,
-			// 			// left:50,
-			// 			// opacity:0
-			// 		},
-			// 		center:true,
-			// 		// animateIn:{top: 200, opacity: 1},
-			// 		// animateOut:{top: 100, opacity: 0}
-			// 	})
-			// .addPage()
-			// 	.addComponent('caption', {
-			// 		text:'前端开发'
-			// 	})
-			// 	.addComponent('bar', {
-			// 		type: 'bar',
-			// 		// text: '',
-			// 		width: 530,
-			// 		height: 600,
-			// 		// bg: '../img/p1_people.png',
-			// 		data: [
-			// 			['JavaScript', .6, '#ff7676'],
-			// 			['HTML/CSS', .1],
-			// 			['CSS3', .35],
-			// 			['Vue', .4],
-			// 			['Angular', .2],
-			// 			['JQuery', .2],
-			// 			['WebApp', .2],
-			// 			['BootStrap', .2],
-			// 		],
-			// 		css: {
-			// 			// top:50,
-			// 			// bottom:0,
-			// 			top:100,
-			// 			opacity:0
-			// 			// left:50,
-			// 			// opacity:0
-			// 		},
-			// 		center:true,
-			// 		animateIn:{opacity: 1, top: 200},
-			// 		animateOut:{opacity: 0, top: 100}
-			// 	})
-			// .addPage()
-			// 	.addComponent('caption', {
-			// 		text:'后端开发'
-			// 	})
-			// 	.addComponent('content', {
-			// 		text:'后端课程中java占最大比',
-			// 		center:true,
-			// 		css:{
-			// 			fontSize: '18px',
-			// 			bottom: 0,
-			// 			opacity: 0,
-			// 			whiteSpace: 'nowrap'
-			// 		},
-			// 		animateIn:{bottom:"15%",opacity:1},
-			// 		animateOut:{bottom:0,opacity:0},
-			// 	})
-			// 	.addComponent('radar', {
-			// 		type: 'radar',
-			// 		// text: '',
-			// 		width: 400,
-			// 		height: 400,
-			// 		// bg: '../img/p1_people.png',
-			// 		data: [
-			// 			['Go', .15, 'red', 0, '120%'],
-			// 			['C++', .46, 'red', 0, '120%'],
-			// 			['C', .3, 'red', 0, '120%'],
-			// 			['Linux', .8, 'red', 0, '120%'],
-			// 			['Python', .38, 'red', 0, '120%'],
-			// 			['JAVA', .46, 'black', 0, '-60%'],
-			// 			['PHP', .3, 'green'],
-
-			// 		],
-			// 		css: {
-			// 			// top:50,
-			// 			top:100,
-			// 			// left:50,
-			// 			opacity:0
-			// 		},
-			// 		center:true,
-			// 		animateIn:{top: 200, opacity: 1},
-			// 		animateOut:{top: 100, opacity: 0},
-			// 		delay:500
-			// 	})		
-			// .addPage()
-			// 	.addComponent('caption', {
-			// 		text:'课程难度分布'
-			// 	})
-			// 	.addComponent('point', {
-			// 		type: 'point',
-			// 		// text: '',
-			// 		width: 300,
-			// 		height: 300,
-			// 		// bg: '../img/p1_people.png',
-			// 		data: [
-			// 			['中级', .45, '#FF7676'],
-			// 			['初级', .25, '#FFA3A3', '-50%', '-60%'],
-			// 			['高级', .3, '#99C1FF', '60%', '-80%']
-			// 		],
-			// 		css: {
-			// 			// top:50,
-			// 			bottom:0,
-			// 			// left:50,
-			// 			opacity:0,
-			// 			color: '#fff'
-			// 		},
-			// 		center:true,
-			// 		animateIn:{bottom: '30%', opacity: 1},
-			// 		animateOut:{bottom: 0, opacity: 0},
-			// 		delay:500
-			// 	})
-			// 	.addComponent('content', {
-			// 		text:'课程难度分布，中级课程难度达到45%',
-			// 		center:true,
-			// 		css:{
-			// 			fontSize: '18px',
-			// 			bottom: 0,
-			// 			opacity: 0,
-			// 			whiteSpace: 'nowrap'
-			// 		},
-			// 		animateIn:{bottom:"15%",opacity:1},
-			// 		animateOut:{bottom:0,opacity:0},
-			// 	})
+			
 			.addPage('tail')
 				.addComponent('logo',{
 					center:true,
@@ -886,7 +685,8 @@
 						opacity:0,
 						top:240,
 						backgroundSize:'100%',
-						fontSize: 32
+						fontSize: 32,
+						whiteSpace:'nowrap'
 					},
 					animateIn:{
 						opacity:1,top:310
@@ -894,23 +694,7 @@
 						opacity:0,top:240
 					}
 				})
-				// .addComponent('slogan',{
-				// 	center:true,
-				// 	width:359,
-				// 	height:129,
-				// 	bg:'img/tail_slogan.png'	,
-				// 	css:{
-				// 		opacity:0,
-				// 		top:281
-
-				// 	},
-				// 	animateIn:{
-				// 		opacity:1,left:'50%'
-				// 	},animateOut:{
-				// 		opacity:0,left:0
-				// 	},
-				// 	delay:500
-				// })
+				
 				.addComponent('share',{
 					width:128,
 					height:120,

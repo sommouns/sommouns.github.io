@@ -28,16 +28,7 @@ const H5 = function () {
 		switch(cfg.type) {
 			case 'base' :
 				component = new h5ComponentBase(name, cfg);break;
-			case 'polyline':
-				component = new h5ComponentPolyLine(name, cfg);break;
-			case 'pie':
-				component = new h5ComponentPie(name, cfg);break;
-			case 'bar':
-				component = new h5ComponentBar(name, cfg);break;
-			case 'radar':
-				component = new h5ComponentRadar(name, cfg);break; 
-			case 'point':
-				component = new h5ComponentPoint(name, cfg);break; 
+			
 				
 			// case ''
 			default:
