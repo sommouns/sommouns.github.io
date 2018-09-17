@@ -22,14 +22,16 @@
 		}
 
 		.h5_page{
-			background-image: url('img/page_bg.png');
+			background-image: url('img/main_bg.jpg');
+			-webkit-background-size: cover;
+			background-size: cover;
 		}
-		.h5_page_face{
+		/*.h5_page_face{
 			background: none;
 			background-image: url('img/face_bg.png');
 			-webkit-background-size: 100%;
 			background-size: 100%;
-		}
+		}*/
 		.h5_component_name_sologen{
 			-webkit-animation: rock 2s infinite 2s;
 			/*left:50%;*/
@@ -131,8 +133,8 @@
 				.addComponent('logo', {
 					center:true,
 					width:395,
-					height:130,
-					bg:'img/face_logo.png',
+					height:430,
+					bg:'img/b_logo.jpg',
 					css:{
 						top:0,
 						opacity:0
@@ -140,97 +142,136 @@
 					animateIn:{top:100, opacity:1},
 					animateOut:{top:0, opacity:0}
 				})
+
 				.addComponent('sologen', {
+					text:'很高兴在这里遇见你',
 					width:365,
 					height:99,
 					center:true,
-					bg: 'img/face_slogan.png',
+					// bg: 'img/face_slogan.png',
 					css:{
 						opacity:0,
-						top:180,
-						left:0
+						top:340,
+						left:0,
+						fontSize:24,
+						color: 'red',
+						whiteSpace: 'nowrap',
+						transform: 'rotate(60deg)'
 					},
 					animateIn:{
-						left:'50%',
+						left:'35%',
 						opacity:1,
 						delay:500
 					},
 					animateOut:{
-						// left:0,
+						left:0,
 						opacity:0
 					}
 				})
-				.addComponent('face_img_left', {
-					width:370,
-					height:493,
-					bg: 'img/face_img_left.png',
-					css:{
-						opacity:0,
-						left:-50,
-						bottom:-50
-					},
-					animateIn:{
-						opacity:1,
-						left:0,
-						bottom:0
-					},
-					animateOut:{
-						opacity:0,
-						left:-50,
-						bottom:-50
-
-					},
-					delay:1000
-				})
-				.addComponent('face_img_right', {
-					width:276,
-					height:449,
-					bg: 'img/face_img_right.png',
-					css:{
-						opacity:0,
-						right:-50,
-						bottom:-50
-					},
-					animateIn:{
-						opacity:1,
-						right:0,
-						bottom:0
-					},
-					animateOut:{
-						opacity:0,
-						right:-50,
-						bottom:-50
-
-					},
-					delay:1500
-				})
-			.addPage()
-				.addComponent('caption', {
-					text:'核心理念'
-				})
-				.addComponent('text', {
-					width:500,
-					height:30,
+				.addComponent('sologen', {
+					text:'这里有属于我们的故事',
+					width:365,
+					height:99,
 					center:true,
-					text:'It教育',
+					// bg: 'img/face_slogan.png',
 					css:{
 						opacity:0,
-
-						textAlign:'center',
-						color:'red',
-						fontSize:'26px'
+						top:380,
+						left:0,
+						fontSize:28,
+						color: 'blue',
+						whiteSpace: 'nowrap'
 					},
 					animateIn:{
-						opacity:1,top:160
-					},animateOut:{
-						opacity:0,top:240
+						left:'35%',
+						opacity:1,
+						delay:1500
+					},
+					animateOut:{
+						left:0,
+						opacity:0
 					}
 				})
+				.addComponent('sologen', {
+					text:'下拉查看更多我们的故事',
+					width:365,
+					height:99,
+					center:true,
+					// bg: 'img/face_slogan.png',
+					css:{
+						opacity:0,
+						top:480,
+						left:0,
+						fontSize:24,
+						color: 'green',
+						whiteSpace: 'nowrap'
+					},
+					animateIn:{
+						left:'35%',
+						opacity:1,
+						delay:2000
+					},
+					animateOut:{
+						// left:0,
+						left:0,
+						opacity:0
+					}
+				})
+			// 	.addComponent('face_img_left', {
+			// 		width:370,
+			// 		height:493,
+			// 		bg: 'img/face_img_left.png',
+			// 		css:{
+			// 			opacity:0,
+			// 			left:-50,
+			// 			bottom:-50
+			// 		},
+			// 		animateIn:{
+			// 			opacity:1,
+			// 			left:0,
+			// 			bottom:0
+			// 		},
+			// 		animateOut:{
+			// 			opacity:0,
+			// 			left:-50,
+			// 			bottom:-50
+
+			// 		},
+			// 		delay:1000
+			// 	})
+			// 	.addComponent('face_img_right', {
+			// 		width:276,
+			// 		height:449,
+			// 		bg: 'img/face_img_right.png',
+			// 		css:{
+			// 			opacity:0,
+			// 			right:-50,
+			// 			bottom:-50
+			// 		},
+			// 		animateIn:{
+			// 			opacity:1,
+			// 			right:0,
+			// 			bottom:0
+			// 		},
+			// 		animateOut:{
+			// 			opacity:0,
+			// 			right:-50,
+			// 			bottom:-50
+
+			// 		},
+			// 		delay:1500
+			// 	})
+			.addPage()
+
+				.addComponent('caption', {
+					text:'介绍'
+				})
+				
 				.addComponent('description',{
 					center:true,
-					width:481,
-					height:285,
-					bg:'img/description_bg.gif',
+					width:581,
+					height:585,
+					
 					css:{
 						opacity:0,
 						padding:'15px 10px 10px 10px',
@@ -238,20 +279,80 @@
 						fontSize:'15px',
 						lineHeight:'18px',
 						textAlign:'justify',
-						bottom:40
+						bottom:40,
+						background: 'skyblue',
+						textIndent: '2em',
+						borderRadius: '30px',
+
 
 					},
-					text:'大师傅和大家发山东飞机撒东方嘉盛大佛几点睡觉git局推短时发生的范德萨发奇偶去玩irj大师傅和大家发山东飞机撒东方嘉盛大佛几点睡觉git局推短时发生的范德萨发奇偶去玩irj',
+					text:'浙江师范大学行知学院“求知”通讯社前身是行知学院新闻中心，成立于2006年10月，于2010年10月并入院学生会，成为新闻宣传中心。在学院力主坚持学生工作特色化和专门化的前提下，2012年5月从学院学生会分离出来，规范设置，正式更名为“求知”通讯社。',
 					animateIn:{
 						opacity:1,
-						bottom:190,
+						top: 150
 
 					},
 					animateOut:{
 						opacity:0,
+						top:-20
+					},
+					delay:300
+				})
+				.addComponent('people',{
+					center:true,
+					width:515,
+					height:305,
+					bg:'img/p1_people.png',
+					css:{
+						opacity:0,
+						bottom:0
+					},
+					animateIn:{
+						opacity:1,
 						bottom:40
 					},
-					delay:1000
+					animateOut:{
+						opacity:0,
+						bottom:0
+					},
+					delay:500
+				})
+				.addPage()
+
+				.addComponent('caption', {
+					text:'介绍'
+				})
+				
+				.addComponent('description',{
+					center:true,
+					width:581,
+					height:585,
+					
+					css:{
+						opacity:0,
+						padding:'15px 10px 10px 10px',
+						color:'#fff',
+						fontSize:'15px',
+						lineHeight:'18px',
+						textAlign:'justify',
+						bottom:40,
+						background: 'skyblue',
+						textIndent: '2em',
+						borderRadius: '30px',
+
+
+					},
+					text:'求知成立至今，秉承学院“知行合一，自强不息”的行知精神，坚持“行以求知，学以致用”的理念，在校力主坚持学生工作特色化、专门化的前提下，及时关注校内外先进文化、时事热点，报道学校学院中心工作、指导思想，主动开展新闻采写。以白驹之速攫采时事之要，以热忱之心浇洒新闻之花。',
+					animateIn:{
+						opacity:1,
+						top: 150
+
+					},
+					animateOut:{
+						opacity:0,
+						top:-20
+					},
+					delay:300
 				})
 				.addComponent('people',{
 					center:true,
@@ -274,34 +375,17 @@
 				})
 			.addPage()
 				.addComponent('caption', {
-					text:'课程方向'
-				})
-				.addComponent('content', {
-					text:'课程分布前端开发占到40%',
-					center:true,
-					css:{
-						fontSize: '18px',
-						bottom: 0,
-						opacity: 0,
-						whiteSpace: 'nowrap'
-					},
-					animateIn:{bottom:"15%",opacity:1},
-					animateOut:{bottom:0,opacity:0},
+					text:'主席团'
 				})
 				
+				
 				.addComponent('polyline', {
-					type: 'polyline',
+					type: 'base',
 					// text: '',
 					width: 530,
-					height: 400,
-					// bg: '../img/p1_people.png',
-					data: [
-						['HTML', .4, 'green'],
-						['JavaScipt', .2, 'black', 0, '-60%'],
-						['AJAX', .6, 'red', 0, '120%'],
-						['Vue.js', .8, 'red', 0, '120%'],
-						['Angular.js', .3, 'red', 0, '120%']
-					],
+					height: 800,
+					bg: 'img/主席团.jpg',
+					
 					css: {
 						// top:50,
 						bottom:0,
@@ -309,172 +393,480 @@
 						opacity:0
 					},
 					center:true,
-					animateIn:{bottom: '35%', opacity: 1},
-					animateOut:{bottom: 0, opacity: 0},
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
 					delay:500
 						})
 			.addPage()
 				.addComponent('caption', {
-					text:'移动开发'
+					text:'主席团'
 				})
 				.addComponent('content', {
-					text:'移动开发课程中 Android 比例最大',
+					text:"主席团的作用是统筹管理整个社团的活动，负责与老师沟通交流，是整个社团的领头人，指导社团的发展与走向。主席团的成员共有五人，分别是社长李依璇，团支书夏天，副社长周圆圆和陈新，兰溪校区负责人张清政。",
 					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
 					css:{
 						fontSize: '18px',
-						bottom: 0,
+						top: 0,
 						opacity: 0,
-						whiteSpace: 'nowrap'
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
 					},
-					animateIn:{bottom:"15%",opacity:1},
-					animateOut:{bottom:0,opacity:0},
-				})
-				.addComponent('pie', {
-					type: 'pie',
-					// text: '',
-					width: 400,
-					height: 400,
-					// bg: '../img/p1_people.png',
-					data: [
-						['IOS', .25, '#5DDBD8'],
-						['Cocos2d-x', .08, '#99C0FF'],
-						['Unity-3D', .08, '#FFAD69'],
-						['Android ', .59, '#FF7676'],
-					],
-					css: {
-						// top:50,
-						top:200,
-						// left:50,
-						// opacity:0
-					},
-					center:true,
-					// animateIn:{top: 200, opacity: 1},
-					// animateOut:{top: 100, opacity: 0}
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
 				})
 			.addPage()
 				.addComponent('caption', {
-					text:'前端开发'
+					text:'办公室'
 				})
-				.addComponent('bar', {
-					type: 'bar',
+				
+				
+				.addComponent('polyline', {
+					type: 'base',
 					// text: '',
 					width: 530,
-					height: 600,
-					// bg: '../img/p1_people.png',
-					data: [
-						['JavaScript', .6, '#ff7676'],
-						['HTML/CSS', .1],
-						['CSS3', .35],
-						['Vue', .4],
-						['Angular', .2],
-						['JQuery', .2],
-						['WebApp', .2],
-						['BootStrap', .2],
-					],
-					css: {
-						// top:50,
-						// bottom:0,
-						top:100,
-						opacity:0
-						// left:50,
-						// opacity:0
-					},
-					center:true,
-					animateIn:{opacity: 1, top: 200},
-					animateOut:{opacity: 0, top: 100}
-				})
-			.addPage()
-				.addComponent('caption', {
-					text:'后端开发'
-				})
-				.addComponent('content', {
-					text:'后端课程中java占最大比',
-					center:true,
-					css:{
-						fontSize: '18px',
-						bottom: 0,
-						opacity: 0,
-						whiteSpace: 'nowrap'
-					},
-					animateIn:{bottom:"15%",opacity:1},
-					animateOut:{bottom:0,opacity:0},
-				})
-				.addComponent('radar', {
-					type: 'radar',
-					// text: '',
-					width: 400,
-					height: 400,
-					// bg: '../img/p1_people.png',
-					data: [
-						['Go', .15, 'red', 0, '120%'],
-						['C++', .46, 'red', 0, '120%'],
-						['C', .3, 'red', 0, '120%'],
-						['Linux', .8, 'red', 0, '120%'],
-						['Python', .38, 'red', 0, '120%'],
-						['JAVA', .46, 'black', 0, '-60%'],
-						['PHP', .3, 'green'],
-
-					],
-					css: {
-						// top:50,
-						top:100,
-						// left:50,
-						opacity:0
-					},
-					center:true,
-					animateIn:{top: 200, opacity: 1},
-					animateOut:{top: 100, opacity: 0},
-					delay:500
-				})		
-			.addPage()
-				.addComponent('caption', {
-					text:'课程难度分布'
-				})
-				.addComponent('point', {
-					type: 'point',
-					// text: '',
-					width: 300,
-					height: 300,
-					// bg: '../img/p1_people.png',
-					data: [
-						['中级', .45, '#FF7676'],
-						['初级', .25, '#FFA3A3', '-50%', '-60%'],
-						['高级', .3, '#99C1FF', '60%', '-80%']
-					],
+					height: 800,
+					bg: 'img/办公室.jpg',
+					
 					css: {
 						// top:50,
 						bottom:0,
 						// left:50,
-						opacity:0,
-						color: '#fff'
+						opacity:0
 					},
 					center:true,
-					animateIn:{bottom: '30%', opacity: 1},
-					animateOut:{bottom: 0, opacity: 0},
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
 					delay:500
+						})
+			.addPage()
+				.addComponent('caption', {
+					text:'办公室'
 				})
 				.addComponent('content', {
-					text:'课程难度分布，中级课程难度达到45%',
+					text:"掌握求知资讯，传达实时信息，深入各部门获取第一手资料，更是信息最可靠的传达者。无论是会议记录，每月的学工简报还是各类短信编辑收发，各类值班安排表，活动布置，文字排版都手到擒来。",
 					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
 					css:{
 						fontSize: '18px',
-						bottom: 0,
+						top: 0,
 						opacity: 0,
-						whiteSpace: 'nowrap'
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
 					},
-					animateIn:{bottom:"15%",opacity:1},
-					animateOut:{bottom:0,opacity:0},
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
 				})
+			.addPage()
+				.addComponent('caption', {
+					text:'策划部'
+				})
+				
+				
+				.addComponent('polyline', {
+					type: 'base',
+					// text: '',
+					width: 530,
+					height: 800,
+					bg: 'img/策划部.jpg',
+					
+					css: {
+						// top:50,
+						bottom:0,
+						// left:50,
+						opacity:0
+					},
+					center:true,
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
+					delay:500
+						})
+			.addPage()
+				.addComponent('caption', {
+					text:'策划部'
+				})
+				.addComponent('content', {
+					text:"策划部是一个新兴部门，没有悠久的历史传统，但有满满的青春活力。策划部负责求知各类大小文体活动的策划与完善，也是各部门沟通协调的桥梁。",
+					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
+					css:{
+						fontSize: '18px',
+						top: 0,
+						opacity: 0,
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
+					},
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'新闻编辑部'
+				})
+				
+				
+				.addComponent('polyline', {
+					type: 'base',
+					// text: '',
+					width: 530,
+					height: 800,
+					bg: 'img/新闻编辑部.jpg',
+					
+					css: {
+						// top:50,
+						bottom:0,
+						// left:50,
+						opacity:0
+					},
+					center:true,
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
+					delay:500
+						})
+			.addPage()
+				.addComponent('caption', {
+					text:'新闻编辑部'
+				})
+				.addComponent('content', {
+					text:"负责求知上上下下大大小小的所有稿件，致力于向行知学子传达校园事，弘扬正能量，也致力于让外界听到行知之声、求知之声。我们穿梭在校园的各大赛事活动中，立身于优秀学子、校园达人旁，将第一手资讯与大家分享。一口一词，满是好奇；一纸一笔，任君挥毫。这里是你展示技术和才华的舞台，这里是你寻找灵感和创意的归宿。",
+					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
+					css:{
+						fontSize: '18px',
+						top: 0,
+						opacity: 0,
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
+					},
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'新闻媒体部'
+				})
+				
+				
+				.addComponent('polyline', {
+					type: 'base',
+					// text: '',
+					width: 530,
+					height: 800,
+					bg: 'img/新闻媒体部.jpg',
+					
+					css: {
+						// top:50,
+						bottom:0,
+						// left:50,
+						opacity:0
+					},
+					center:true,
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
+					delay:500
+						})
+			.addPage()
+				.addComponent('caption', {
+					text:'新闻媒体部'
+				})
+				.addComponent('content', {
+					text:"主管行知新媒体的重压宣传力量。玩转微博、high翻微信，确定求知栏目和部门风格，开设公众号制作教学。开发新兴功能，拥有掌上大学，体验不一样的快捷大学生活。",
+					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
+					css:{
+						fontSize: '18px',
+						top: 0,
+						opacity: 0,
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
+					},
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
+				})
+			.addPage()
+				.addComponent('caption', {
+					text:'影像设计部'
+				})
+				
+				
+				.addComponent('polyline', {
+					type: 'base',
+					// text: '',
+					width: 530,
+					height: 800,
+					bg: 'img/影像设计部.jpg',
+					
+					css: {
+						// top:50,
+						bottom:0,
+						// left:50,
+						opacity:0
+					},
+					center:true,
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
+					delay:500
+						})
+			.addPage()
+				.addComponent('caption', {
+					text:'影像设计部'
+				})
+				.addComponent('content', {
+					text:"与新编一起活跃在校园内的各个角落，用相机记录下每一幕珍贵时刻，并以照片的形式让更多的行知人看到校园事。一台相机，定格生活，留住美丽，不同的色彩描绘精彩人生。同时也肩负着求知周边产品的设计与制作，为各大活动与节日设计专属海报与展板，包揽求知一切设计之货，挑战创意与技术，PPT，PS等软件的运用更是出神入化。",
+					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
+					css:{
+						fontSize: '18px',
+						top: 0,
+						opacity: 0,
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
+					},
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
+				})	
+				.addPage()
+				.addComponent('caption', {
+					text:'视听传媒部'
+				})
+				
+				
+				.addComponent('polyline', {
+					type: 'base',
+					// text: '',
+					width: 530,
+					height: 800,
+					bg: 'img/视听传媒部.jpg',
+					
+					css: {
+						// top:50,
+						bottom:0,
+						// left:50,
+						opacity:0
+					},
+					center:true,
+					animateIn:{top: '30%', opacity: 1},
+					animateOut:{top: 0, opacity: 0},
+					delay:500
+						})
+			.addPage()
+				.addComponent('caption', {
+					text:'视听传媒部'
+				})
+				.addComponent('content', {
+					text:"我们用自己热衷的手法对校园内的各种活动、晚会、会议等进行动态记录，打造求知街采专栏节目。采访、拍摄、视频剪辑样样不在话下。拍摄的过程即是创造的过程，一个拍摄对象在不同人的手下会有不同的呈现方法，我们期待你的视角和你的创造。",
+					center:true,
+					// height:600,
+					
+					// bg:'img/主席团.jpg'
+					css:{
+						fontSize: '18px',
+						top: 0,
+						opacity: 0,
+						textIndent: '2em',
+						width:'80%',
+						background:'skyblue',
+						color: '#fff',
+						borderRadius: '30px',
+						padding:'15px 20px 10px 20px',
+					},
+					animateIn:{top:"35%",opacity:1},
+					animateOut:{top:0,opacity:0},
+				})	
+			// 	.addComponent('content', {
+			// 		text:'移动开发课程中 Android 比例最大',
+			// 		center:true,
+			// 		css:{
+			// 			fontSize: '18px',
+			// 			bottom: 0,
+			// 			opacity: 0,
+			// 			whiteSpace: 'nowrap'
+			// 		},
+			// 		animateIn:{bottom:"15%",opacity:1},
+			// 		animateOut:{bottom:0,opacity:0},
+			// 	})
+			// 	.addComponent('pie', {
+			// 		type: 'pie',
+			// 		// text: '',
+			// 		width: 400,
+			// 		height: 400,
+			// 		// bg: '../img/p1_people.png',
+			// 		data: [
+			// 			['IOS', .25, '#5DDBD8'],
+			// 			['Cocos2d-x', .08, '#99C0FF'],
+			// 			['Unity-3D', .08, '#FFAD69'],
+			// 			['Android ', .59, '#FF7676'],
+			// 		],
+			// 		css: {
+			// 			// top:50,
+			// 			top:200,
+			// 			// left:50,
+			// 			// opacity:0
+			// 		},
+			// 		center:true,
+			// 		// animateIn:{top: 200, opacity: 1},
+			// 		// animateOut:{top: 100, opacity: 0}
+			// 	})
+			// .addPage()
+			// 	.addComponent('caption', {
+			// 		text:'前端开发'
+			// 	})
+			// 	.addComponent('bar', {
+			// 		type: 'bar',
+			// 		// text: '',
+			// 		width: 530,
+			// 		height: 600,
+			// 		// bg: '../img/p1_people.png',
+			// 		data: [
+			// 			['JavaScript', .6, '#ff7676'],
+			// 			['HTML/CSS', .1],
+			// 			['CSS3', .35],
+			// 			['Vue', .4],
+			// 			['Angular', .2],
+			// 			['JQuery', .2],
+			// 			['WebApp', .2],
+			// 			['BootStrap', .2],
+			// 		],
+			// 		css: {
+			// 			// top:50,
+			// 			// bottom:0,
+			// 			top:100,
+			// 			opacity:0
+			// 			// left:50,
+			// 			// opacity:0
+			// 		},
+			// 		center:true,
+			// 		animateIn:{opacity: 1, top: 200},
+			// 		animateOut:{opacity: 0, top: 100}
+			// 	})
+			// .addPage()
+			// 	.addComponent('caption', {
+			// 		text:'后端开发'
+			// 	})
+			// 	.addComponent('content', {
+			// 		text:'后端课程中java占最大比',
+			// 		center:true,
+			// 		css:{
+			// 			fontSize: '18px',
+			// 			bottom: 0,
+			// 			opacity: 0,
+			// 			whiteSpace: 'nowrap'
+			// 		},
+			// 		animateIn:{bottom:"15%",opacity:1},
+			// 		animateOut:{bottom:0,opacity:0},
+			// 	})
+			// 	.addComponent('radar', {
+			// 		type: 'radar',
+			// 		// text: '',
+			// 		width: 400,
+			// 		height: 400,
+			// 		// bg: '../img/p1_people.png',
+			// 		data: [
+			// 			['Go', .15, 'red', 0, '120%'],
+			// 			['C++', .46, 'red', 0, '120%'],
+			// 			['C', .3, 'red', 0, '120%'],
+			// 			['Linux', .8, 'red', 0, '120%'],
+			// 			['Python', .38, 'red', 0, '120%'],
+			// 			['JAVA', .46, 'black', 0, '-60%'],
+			// 			['PHP', .3, 'green'],
+
+			// 		],
+			// 		css: {
+			// 			// top:50,
+			// 			top:100,
+			// 			// left:50,
+			// 			opacity:0
+			// 		},
+			// 		center:true,
+			// 		animateIn:{top: 200, opacity: 1},
+			// 		animateOut:{top: 100, opacity: 0},
+			// 		delay:500
+			// 	})		
+			// .addPage()
+			// 	.addComponent('caption', {
+			// 		text:'课程难度分布'
+			// 	})
+			// 	.addComponent('point', {
+			// 		type: 'point',
+			// 		// text: '',
+			// 		width: 300,
+			// 		height: 300,
+			// 		// bg: '../img/p1_people.png',
+			// 		data: [
+			// 			['中级', .45, '#FF7676'],
+			// 			['初级', .25, '#FFA3A3', '-50%', '-60%'],
+			// 			['高级', .3, '#99C1FF', '60%', '-80%']
+			// 		],
+			// 		css: {
+			// 			// top:50,
+			// 			bottom:0,
+			// 			// left:50,
+			// 			opacity:0,
+			// 			color: '#fff'
+			// 		},
+			// 		center:true,
+			// 		animateIn:{bottom: '30%', opacity: 1},
+			// 		animateOut:{bottom: 0, opacity: 0},
+			// 		delay:500
+			// 	})
+			// 	.addComponent('content', {
+			// 		text:'课程难度分布，中级课程难度达到45%',
+			// 		center:true,
+			// 		css:{
+			// 			fontSize: '18px',
+			// 			bottom: 0,
+			// 			opacity: 0,
+			// 			whiteSpace: 'nowrap'
+			// 		},
+			// 		animateIn:{bottom:"15%",opacity:1},
+			// 		animateOut:{bottom:0,opacity:0},
+			// 	})
 			.addPage('tail')
 				.addComponent('logo',{
 					center:true,
-					width:359,
-					height:129,
-					bg:'img/tail_logo.png'	,
+					width:559,
+					height:529,
+					bg:'img/qiuzhi.png'	,
 					css:{
 						opacity:0,
-						top:240
-
+						top:240,
+						backgroundSize:'100%'
 					},
 					animateIn:{
 						opacity:1,top:210
@@ -482,23 +874,23 @@
 						opacity:0,top:240
 					}
 				})
-				.addComponent('slogan',{
-					center:true,
-					width:359,
-					height:129,
-					bg:'img/tail_slogan.png'	,
-					css:{
-						opacity:0,
-						top:281
+				// .addComponent('slogan',{
+				// 	center:true,
+				// 	width:359,
+				// 	height:129,
+				// 	bg:'img/tail_slogan.png'	,
+				// 	css:{
+				// 		opacity:0,
+				// 		top:281
 
-					},
-					animateIn:{
-						opacity:1,left:'50%'
-					},animateOut:{
-						opacity:0,left:0
-					},
-					delay:500
-				})
+				// 	},
+				// 	animateIn:{
+				// 		opacity:1,left:'50%'
+				// 	},animateOut:{
+				// 		opacity:0,left:0
+				// 	},
+				// 	delay:500
+				// })
 				.addComponent('share',{
 					width:128,
 					height:120,
@@ -539,8 +931,7 @@
 						$.fn.fullpage.moveTo(1)
 					}
 				})
-			.loader([ 'img/tail_back.png','img/tail_share.png','img/tail_slogan.png','img/face_logo.png', 'img/description_bg.gif', 'img/face_bg.png',
-			'img/face_img_left.png', 'img/p1_people.png', 'img/page_bg.png', 'img/page_caption_bg.png' ])
+			.loader([ 'img/b_logo.jpg','img/main_bg.jpg','img/qiuzhi.png','img/reward.jpg',"img/主席团.jpg","img/办公室.jpg","img/影像设计部.jpg","img/新闻媒体部.jpg","img/新闻编辑部.jpg","img/策划部.jpg","img/视听传媒部.jpg", ])
 		})
 	</script>
 </body>
