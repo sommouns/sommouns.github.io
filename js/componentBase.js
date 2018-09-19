@@ -13,6 +13,7 @@
 
 const h5ComponentBase = function(name, cfg) {
 	cfg = cfg || {}
+	
 	const id = `h5_c_${Math.random()}`.replace('.', '_')
 	const cls = ` h5_component_${cfg.type}`
 	const component = $(`<div class="h5_component_name_${name} h5_component ${cls}" id="${id}">` )

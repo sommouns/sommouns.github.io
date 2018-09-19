@@ -49,4 +49,19 @@ var H5_loading = function  (images,firstPage) {
         if(firstPage){
             $.fn.fullpage.moveTo( firstPage );
         }
+        var doc = document
+        var imgArray = doc.getElementsByClassName('h5_component_name_img')
+        for(let i in imgArray) {
+            imgArray[i].onclick = function (){ 
+                imgArray[i].style.width = '306px'
+                imgArray[i].style.zIndex = '999'
+                imgArray[i].style.height = '432px'
+                setTimeout(function() {
+                    imgArray[i].style.width = '165px'
+                    imgArray[i].style.zIndex = '0'
+                    imgArray[i].style.height = '432px'
+                },2000)
+                
+            }
+        }
 }
