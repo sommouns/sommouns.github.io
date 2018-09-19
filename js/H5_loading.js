@@ -52,7 +52,9 @@ var H5_loading = function  (images,firstPage) {
         var doc = document
         var imgArray = doc.getElementsByClassName('h5_component_name_img')
         for(let i in imgArray) {
+
             imgArray[i].onclick = function (){ 
+                // console.log(1)
                 imgArray[i].style.width = '306px'
                 imgArray[i].style.zIndex = '999'
                 imgArray[i].style.height = '432px'
